@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dip"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.yasin.IntelligentGameAgent.MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/layoutRight"
+        android:layout_width="175dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="300dp"
+        android:background="?attr/colorAccent"
+        android:orientation="vertical"
+        android:layout_alignStart="@+id/seekBarRight">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/layoutRight"
+        android:background="@android:color/background_dark"
+        android:text="RIGHT"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/holo_green_light"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/layoutLeft"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="300dp"
+        android:background="@android:color/holo_red_light"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewLeft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/seekBarRightValue"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="20dp"
+            android:background="@android:color/background_dark"
+            android:text="LEFT"
+            android:textColor="@android:color/holo_green_light"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/pickColorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeColorNow"
+        android:text="Change Color"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textSize="8sp"
+        android:layout_alignBaseline="@+id/RESETbtn"
+        android:layout_alignBottom="@+id/RESETbtn"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/seekBarRightValue" />
+
+    <SeekBar
+        android:id="@+id/seekBarLeft"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/seekBarLeftValue"
+        android:layout_marginTop="16dp"
+        android:max="255"
+        android:progress="3" />
+
+    <SeekBar
+        android:id="@+id/seekBarRight"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/seekBarLeft"
+        android:max="255"
+        android:progress="3" />
+
+    <TextView
+        android:id="@+id/seekBarLeftValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/seekBarRightValue"
+        android:text="SET TRANSPARENCY"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/seekBarRightValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textViewRight"
+        android:layout_marginTop="149dp"
+        android:text="SET TRANSPARENCY"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/TRAINbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="trainNettoSave"
+        android:text="Train"
+        android:textSize="8sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/RESETbtn"
+        android:layout_alignStart="@+id/RESETbtn" />
+
+    <Button
+        android:id="@+id/TESTbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="test"
+        android:text="TEST"
+        android:textSize="8sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/pickColorButton" />
+
+    <Button
+        android:id="@+id/RESETbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="resetNet"
+        android:text="CREATE NET OR RESET"
+        android:textSize="8sp"
+        android:layout_below="@+id/seekBarThresholdSet"
+        android:layout_alignEnd="@+id/seekBarLeft"
+        android:layout_marginTop="28dp"
+        android:layout_toEndOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/seekBarLeft"
+        android:layout_marginTop="23dp"
+        android:text="Threshold Value"
+        android:textStyle="bold|italic" />
+
+    <SeekBar
+        android:id="@+id/seekBarThresholdSet"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray"
+        android:max="100000"
+        android:progress="0" />
+
+    <TextView
+        android:id="@+id/textViewThresholdValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Threshold Value"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignStart="@+id/seekBarRight" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:text="1"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/RESETbtn"
+        android:layout_alignBottom="@+id/RESETbtn"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:text="3"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/pickColorButton"
+        android:layout_alignBottom="@+id/pickColorButton"
+        android:layout_alignStart="@+id/textViewThresholdValue" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:text="4"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/TESTbtn"
+        android:layout_alignStart="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:text="2"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/TRAINbtn"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>
+
+
+
