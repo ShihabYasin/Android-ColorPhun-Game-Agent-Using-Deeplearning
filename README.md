@@ -1,6 +1,6 @@
 # Android-ColorPhun-Game-Agent-Using-Deeplearning
 ## An intelligent game agent to play autonomously a simple game idea namely ColorPhun. 
-https://github.com/prakhar1989/ColorPhun
+Original game repo for mechanical play: https://github.com/prakhar1989/ColorPhun
 
 ## Screen Shot: Games Playing by Agent
 <br>
